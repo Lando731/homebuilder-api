@@ -76,3 +76,14 @@ def estimate_plan(data: PlanInput):
         day_counter = end_day + 1
 
     return EstimateOutput(materials=materials, labor=labor, total_cost=total, schedule=schedule)
+from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import List, Dict
+
+app = FastAPI()
+
+# Existing code...
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Home Builder API. Visit /docs for API documentation."}
